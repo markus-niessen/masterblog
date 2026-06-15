@@ -35,7 +35,8 @@ def add():
             "id": new_id,
             "title": title,
             "author": author,
-            "content": content
+            "content": content,
+            "likes": 0
         }
 
         blog_posts.append(new_post)
@@ -77,6 +78,7 @@ def update(post_id):
         post["author"] = request.form.get("author")
         post["content"] = request.form.get("content")
 
+
         for index, blog_post in enumerate(blog_posts):
             if blog_post["id"] == post_id:
                 blog_posts[index] = post
@@ -87,6 +89,19 @@ def update(post_id):
         return redirect(url_for("index"))
 
     return render_template("update.html", post=post)
+
+@app.route("/like/<int:id>")
+def like(id):
+    blog_posts = load_posts()
+
+    for post in blog_posts:
+        if post["id"] == id:
+            post["likes"] += 1
+            break
+
+    save_posts(blog_posts)
+
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

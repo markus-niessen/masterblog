@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask Blog</title>
-    <a href="/add">Add a new blog post</a>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Welcome to My Flask Blog!</h1>
+    <a href="/add">Add a new blog post</a>
     {% for post in posts %}
 <div class="post">
     <h2>{{ post.title }}</h2>
     <p><em>Written by {{ post.author }}</em></p>
     <p>{{ post.content }}</p>
-    <a href="{{ url_for('delete', post_id=post['id']) }}">Delete</a>
+    <a href="{{ url_for('delete', post_id=post.id) }}">Delete</a>
     <a href="{{ url_for('update', post_id=post.id) }}">Edit</a>
+    <a href="{{ url_for('like', id=post.id) }}">
+    <button>Like 👍</button>
+    </a>
+    <p>Likes: {{ post.likes }}</p>
 </div>
 {% endfor %}
 </body>
