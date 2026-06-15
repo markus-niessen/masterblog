@@ -1,17 +1,10 @@
 [
     {
-        "id": 2,
-        "title": "Climate Change and Its Impact",
-        "author": "Jane Smith",
-        "content": "Climate change is one of the most pressing issues of our time. Rising temperatures, melting ice caps, and extreme weather events are all symptoms of a changing climate.",
-        "likes": 5
-    },
-    {
         "id": 3,
         "title": "The Power of Mindfulness",
         "author": "Emily Johnson",
         "content": "Mindfulness is the practice of being present and fully engaged in the moment. It can reduce stress, improve focus, and enhance overall well-being.",
-        "likes": 13
+        "likes": 15
     },
     {
         "id": 4,
