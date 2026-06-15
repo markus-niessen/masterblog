@@ -1,8 +1,14 @@
 [
     {
         "id": 3,
-        "title": "Mein Test",
+        "title": "Mein Test 3",
         "author": "Markus",
         "content": "Das ist ein Testbeitrag"
+    },
+    {
+        "id": 4,
+        "title": "Test 2",
+        "author": "Markus",
+        "content": "das ist mein zweiter Beitrag\r\n"
     }
 ]
